@@ -1,0 +1,59 @@
+﻿@page
+@model RailManage.Pages.Trains.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Train</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Train.TrainName" class="control-label"></label>
+                <input asp-for="Train.TrainName" class="form-control" />
+                <span asp-validation-for="Train.TrainName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Train.TrainStartLocation" class="control-label"></label>
+                <input asp-for="Train.TrainStartLocation" class="form-control" />
+                <span asp-validation-for="Train.TrainStartLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Train.TrainDestinationLocation" class="control-label"></label>
+                <input asp-for="Train.TrainDestinationLocation" class="form-control" />
+                <span asp-validation-for="Train.TrainDestinationLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Train.TrainCapacity" class="control-label"></label>
+                <input asp-for="Train.TrainCapacity" class="form-control" />
+                <span asp-validation-for="Train.TrainCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Train.NoOfBoggies" class="control-label"></label>
+                <input asp-for="Train.NoOfBoggies" class="form-control" />
+                <span asp-validation-for="Train.NoOfBoggies" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Train.TicketPrice" class="control-label"></label>
+                <input asp-for="Train.TicketPrice" class="form-control" />
+                <span asp-validation-for="Train.TicketPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
